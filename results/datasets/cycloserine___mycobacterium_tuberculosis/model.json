@@ -1,0 +1,1 @@
+{"rules": ["Absence(ATTTCGCGAGGGGGTTCCCCCATGGGCCGCG)", "Presence(AAGTGTGGTATGTGCTCGAAGAGGTCATCGC)"], "rule_annotations": [{"product": "", "end": 905104, "accession": "CP009101", "start": 905074, "gene": "", "strand": -1}, {"product": "", "end": "", "accession": "", "start": "", "gene": "", "strand": ""}], "type": "disjunction", "n_rules": 2, "rule_importances": [0.7, 0.3]}
