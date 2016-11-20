@@ -11,6 +11,9 @@
 
     <title>Kover AMR Platform - Detailed Results</title>
 
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,44 +39,13 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Kover - AMR Platform</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/aldro61/kover">GitHub</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+    <div id="header"></div>
 
     <div class="container">
 
         <div class="row">
             <div class="col-sm-12">
-                 <h1>Detailed Results</h1>
+                 <h2>Detailed Results</h2>
                 <div>
                     <a href="index.html"><-- Back to results summary</a>
                 <div>
@@ -196,8 +168,7 @@
 
     </div>
 
-    <footer class="footer">
-    </footer>
+    <div id="footer"></div>
 
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
@@ -211,7 +182,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
 
     <script>
-        var getUrlParameter = function getUrlParameter(sParam) {
+        function getUrlParameter(sParam) {
             var sPageURL = decodeURIComponent(window.location.search.substring(1)),
                 sURLVariables = sPageURL.split('&'),
                 sParameterName,
@@ -226,14 +197,14 @@
             }
         };
 
-        var initialize_tooltips = function initialize_tooltips(){
+        function initialize_tooltips(){
             // Initialize all tooltips
             $(function () {
               $('[data-toggle="tooltip"]').tooltip();
             })
         }
 
-        var formatInt = function formatInt(val)
+        function formatInt(val)
         {
             val = val.toString()
             var rgx = /(\d+)(\d{3})/;
@@ -243,7 +214,7 @@
             return val;
         }
 
-        var get_dataset_info = function () {
+        function get_dataset_info() {
             /* TODO: need to support multiple species */
             ds_info = {}
             ds_info["name"] = getUrlParameter("ds");
@@ -253,7 +224,7 @@
             return ds_info;
         }
 
-        var display_model = function (model_data){
+        function display_model(model_data){
             // Generate the HMTL for each rule
             rule_html = []
             $.each(model_data.rules, function (idx, rule){
@@ -293,6 +264,12 @@
         }
 
         $(document).ready(function(){
+            // Load the page header
+            $("#header").load("header.html");
+
+            // Load the page footer
+            $("#footer").load("footer.html");
+
             // Show dataset informations
             ds_info = get_dataset_info();
             $("#species_name_1").text(ds_info["species"].split(" ")[0]);
@@ -310,6 +287,7 @@
             // Set the URL to download the fasta version of the model
             $("#model_fasta").prop("href", "./results/datasets/" + ds_info["name"] + "/" + ds_info["name"] +".fasta");
 
+            // Activates all the tooltips
             initialize_tooltips();
         });
 
