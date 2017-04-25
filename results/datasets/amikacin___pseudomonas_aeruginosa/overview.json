@@ -1,1 +1,1 @@
-[{"ds_n_res": 87, "ds_n_genomes": 492, "ds_n_sus": 405, "mean_risk": 0.12139999999999999, "mean_specificity": 0.96040000000000003, "mean_sensitivity": 0.50560000000000005, "running_time": 233.0}]
+[{"mean_sensitivity": 0.58620000000000005, "mean_risk": 0.11310000000000001, "ds_n_res": 90, "mean_specificity": 0.95109999999999995, "running_time": 4065.0, "ds_n_genomes": 498, "ds_n_sus": 408, "ds_n_kmers": 43246793}]

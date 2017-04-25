@@ -1,1 +1,1 @@
-{"rules": ["Presence(AAGTACCACCCGCACGGCGACATCGCGGTCT)"], "rule_annotations": [{"product": "DNA gyrase subunit A", "end": 2020623, "accession": "CP012582", "start": 2020593, "gene": "", "strand": 1}], "type": "conjunction", "n_rules": 1, "rule_importances": [1.0]}
+{"rules": ["Presence(AAGTACCACCCGCACGGCGACATCGCGGTCT)"], "rule_annotations": [{"product": "", "end": "", "accession": "", "start": "", "identity": "", "gene": "", "strand": ""}], "type": "conjunction", "n_rules": 1, "rule_importances": [1.0]}
